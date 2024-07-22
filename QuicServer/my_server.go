@@ -196,7 +196,8 @@ func main() {
 					Handler: handler,
 					Addr:    bCap,
 					QUICConfig: &quic.Config{
-						Tracer: qlog.DefaultTracer,
+						Allow0RTT: true,
+						Tracer:    qlog.DefaultTracer,
 					},
 				}
 				err = server.ListenAndServeTLS(certFile, keyFile)
@@ -206,6 +207,7 @@ func main() {
 			}
 			wg.Done()
 		}()
+
 	}
 
 	// Wait for all server listeners to finish
