@@ -153,7 +153,7 @@ func main() {
 
 	// Define command-line flags
 	bs := binds{}
-	flag.Var(&bs, "bind", "comma-seperated addresses, example: 10.10.10.254:6121")
+	flag.Var(&bs, "bind", "comma-seperated addresses, example: 10.10.10.253:6121")
 	www := flag.String("www", "", "path to directory containing static content")
 	tcp := flag.Bool("tcp", false, "listen on TCP (in addition to QUIC)")
 	key := flag.String("key", "", "path to TLS key file (required with -cert)")
