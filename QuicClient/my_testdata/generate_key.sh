@@ -12,7 +12,7 @@ openssl req -out cert.csr -new -newkey rsa:2048 -nodes -keyout priv.key
   -subj "/O=quic-go/"
 
 echo "Sign certificate:"
-openssl x509 -req -sha256 -days 3650 -in cert.csr -out cert.pem -CA ca.pem -CAkey ca.key -CAcreateserial -extfile <(printf "subjectAltName=DNS:localhost,IP:10.10.10.66")
+openssl x509 -req -sha256 -days 3650 -in cert.csr -out cert.pem -CA ca.pem -CAkey ca.key -CAcreateserial -extfile <(printf "subjectAltName=DNS:localhost,IP:10.10.10.253")
 
 # debug output the certificate
 sudo openssl x509 -noout -text -in cert.pem
